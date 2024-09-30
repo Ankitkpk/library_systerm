@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const transactionController_1 = require("../controllers/transactionController");
+const router = (0, express_1.Router)();
+router.post('/issuebook', transactionController_1.issueBook);
+router.post('/return', transactionController_1.returnBook);
+router.get('/history', transactionController_1.getTransactionHistory);
+router.get('/total-rent', transactionController_1.totalRentGenerated);
+router.get('/user-books', transactionController_1.booksIssuedToUser);
+router.get('/date-range', transactionController_1.booksIssuedInDateRange);
+exports.default = router;
